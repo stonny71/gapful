@@ -3,12 +3,12 @@
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gapful</title>
+  <title>Gapful Checker</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-
+<link rel="stylesheet" href="w3.css">
 
 <style type="text/css">
 body{
@@ -41,7 +41,7 @@ Evenly divisible   means divisible with no remainder.
 <br>
 
 <b class="w3-medium"  style="text-align:left" >Example.</b><br>
-<mark>187</mark> is a   gapful   number because it is evenly divisible by the number   <mark>17</mark>   which is formed by the first and last decimal digits of   <mark>187.</mark>
+<mark><b>187</b></mark> is a   gapful   number because it is evenly divisible by the number   <mark><b>17</b></mark>   which is formed by the first and last decimal digits of   <mark><b>187.</b></mark>
 
 <br>
 About   7.46%   of positive integers are gapful.
@@ -56,20 +56,17 @@ About   7.46%   of positive integers are gapful.
 
 var h1=document.getElementById("h1");
 function gapful(){
-var inp=document.getElementById("inp");
+var field=document.getElementById("inp");
 
-var l=inp.value;
-var l1 = inp.value[0]
-var l3 = inp.value[inp.value.length-1];
+var val=Number(field.value)
+val=String(val);
+var finalVal=(val[0])+(val[val.length-1]);
 
-var l4 = l1+l3;
-var total = l/l4;
-
-if(total%2==0){
-h1.innerText="Success : "+ l+ " is divisble by "+ l4
+if(val % finalVal == 0){
+h1.innerText="Success : "+ val+ " is divisble by "+ finalVal
 }
 else{
-h1.innerText="Try again.  "+ l+ " is not divisble by "+ l4
+h1.innerText="Try again.  "+ val+ " is not divisble by "+ finalVal
 }
 }
 
