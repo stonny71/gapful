@@ -1,0 +1,78 @@
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giveaway</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+<style type="text/css">
+body{
+background:#1D2026 ! important;
+color:#fff;
+font-family: 'Comfortaa', verdana;
+}
+
+.faint{
+color:848EA0;
+margin:0px;
+}
+
+mark{
+color:#00ff00;
+background:none;
+}
+
+</style>
+
+</head>
+<body>
+<center><br>
+<b class="w3-padding w3-large" >Gapful Number Checker</b>
+<br>
+<p class="w3-margin w3-padding w3-border w3-small" >
+<b class="w3-medium" >What is a gapful number?</b>
+Numbers that are (evenly) divisible by the number formed by the <mark>first</mark> and <mark>last</mark> digits are known as   <mark>gapful numbers.</mark><br>
+Evenly divisible   means divisible with no remainder.
+<br>
+
+<b class="w3-medium"  style="text-align:left" >Example.</b><br>
+<mark>187</mark> is a   gapful   number because it is evenly divisible by the number   <mark>17</mark>   which is formed by the first and last decimal digits of   <mark>187.</mark>
+
+<br>
+About   7.46%   of positive integers are gapful.
+</p>
+
+<h1 id="h1" style="margin-top:30px"  class="w3-tag w3-teal w3-large w3-padding"  ><b>Result will appear here</b></h1>
+<input class="w3-input w3-round" style="width:60%; display:inline-block;margin-top:30px"  type="number"  id="inp" >
+
+<button class="w3-btn w3-green w3-round"  onclick="gapful()">check</button>
+
+<script type="text/javascript">
+
+var h1=document.getElementById("h1");
+function gapful(){
+var inp=document.getElementById("inp");
+
+var l=inp.value;
+var l1 = inp.value[0]
+var l3 = inp.value[inp.value.length-1];
+
+var l4 = l1+l3;
+var total = l/l4;
+
+if(total%2==0){
+h1.innerText="Success : "+ l+ " is divisble by "+ l4
+}
+else{
+h1.innerText="Try again.  "+ l+ " is not divisble by "+ l4
+}
+}
+
+</script>
+</body>
+</html>
